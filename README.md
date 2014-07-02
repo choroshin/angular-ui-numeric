@@ -18,6 +18,8 @@ angular.module('app', ['numeric']);
 
 Check the [demo](http://choroshin.github.io/ui-numeric/) for an example on how it works.
 
+## Playground
+http://plnkr.co/edit/o33VP56azuA22FLjpU3p?p=preview
 
 
 
