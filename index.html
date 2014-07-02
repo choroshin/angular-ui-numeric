@@ -52,14 +52,14 @@ angular.module('app', ['ui.numeric']);
 <div numeric=""  ng-model="numericValue"></div>
 
 </br>
-<h3><a name="default" class="anchor" href="#default"><span class="octicon octicon-link"></span></a>Min, Max and Step Properties:</h3>
+<h3><a name="default" class="anchor" href="#default"><span class="octicon octicon-link"></span></a>Min, Max and Step Properties (as an obejct or attribute):</h3>
 
 
 <pre><code>
-&lt;div numeric="{min:1,max:10,step:2}"  ng-model="numeric"&gt;&lt;/div&gt;
+&lt;div numeric="{min:1,max:10}" step="2" ng-model="numeric"&gt;&lt;/div&gt;
 </code></pre>
 
-<div numeric="{min:1,max:10,step:2}"  ng-model="numeric_default"></div>
+<div numeric="{min:1,max:10}" step="2" ng-model="numeric_default"></div>
 
 </br>
 <h3><a name="default" class="anchor" href="#default"><span class="octicon octicon-link"></span></a>numeric control has event listeners attached to it, assigned by defining the listeners in the option passed to the numeric control. For example in controller:</h3>
