@@ -1,6 +1,7 @@
 angular.module('numeric', []).directive("numeric", function ($timeout) {
         return {
             require: 'ngModel',
+            restrict: 'AE',
             link: function (scope, element, attrs, ngModel) {
                 var numericElement = "";
                 if (element.is("input")) {
