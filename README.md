@@ -12,7 +12,7 @@ AngularJS directive for enhancing a text input for entering numeric values, with
 add the numeric module to your Angular App.
 
 ```javascript
-angular.module('app', ['numeric']);
+angular.module('app', ['ui.numeric']);
 ```
 ## Usage
 
