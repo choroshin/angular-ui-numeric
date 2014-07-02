@@ -72,8 +72,7 @@ angular.module('app', ['ui.numeric']);
  }
 </code></pre>
 <div ng-controller="ctrl">
-   <div numeric="numeric_options"  ng-model="numeric_event_demo"></div>
-   </br>
+   <div numeric="numeric_options" style="float:left" ng-model="numeric_event_demo"></div>
    <button ng-click="events=[]">Clear</button>
 
    <div ng-repeat="event in events track by $index">{{event}}</div>
