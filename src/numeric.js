@@ -6,7 +6,7 @@ angular.module('numeric', []).directive("numeric", function ($timeout) {
                 if (element.is("input")) {
                     numericElement = element;
                 } else {
-                    numericElement = angular.element(' <input />');
+                    numericElement = angular.element(' <input>');
                     element.append(numericElement);
                 }
                 function parseNumber(n, decimals) {
