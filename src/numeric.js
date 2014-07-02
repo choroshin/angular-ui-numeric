@@ -62,6 +62,7 @@ angular.module('numeric', []).directive("numeric", function ($timeout) {
                     init();
                     numericElement.spinner('option', 'disabled', !!newVal);
                 });
+                //destroy jquery spinner object when directive object is destroyed
                 function destroy() {
                     numericElement.spinner('destroy');
                 }
