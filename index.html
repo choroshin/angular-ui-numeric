@@ -73,7 +73,7 @@ angular.module('app', ['numeric']);
 </code></pre>
 <div ng-controller="ctrl">
    <div numeric="numeric_options"  ng-model="numeric_event_demo"></div>
-   <div ng-repeat="event in events">{{event}}</div>
+   <div ng-repeat="event in events track by $index">{{event}}</div>
 </div>
  
 
