@@ -1,4 +1,4 @@
-angular.module('numeric', []).directive("numeric", function ($timeout) {
+angular.module('ui.numeric', []).directive("numeric", function ($timeout) {
         return {
             require: 'ngModel',
             restrict: 'AE',
