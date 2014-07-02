@@ -1,1 +1,1 @@
-angular.module('numeric_demo', ['numeric']);
+angular.module('numeric', ['numeric']);
