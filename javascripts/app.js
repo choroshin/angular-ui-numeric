@@ -1,4 +1,4 @@
-angular.module('numeric', ['numeric']);
+angular.module('ui.numeric', ['numeric']);
 function ctrl($scope){
 $scope.events=[];
  $scope.numeric_options = {
