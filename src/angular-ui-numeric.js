@@ -21,8 +21,11 @@ angular.module('ui.numeric', []).directive("numeric", function ($timeout) {
 
                 var init = function () {
                     angular.forEach(properties, function (property) {
-                        if (angular.isDefined(attrs[property])) {
+                         if (angular.isDefined(attrs[property])) {
                             options[property] = parseNumber(attrs[property], useDecimals);
+                        }
+                        else if (options.hasOwnProperty(property) && angular.isUndefined(options[property])) {
+                            options[property] = 0;
                         }
                     });
                     numericElement.spinner(options);
