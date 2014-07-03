@@ -58,6 +58,15 @@ angular.module('ui.numeric', []).directive("numeric", function ($timeout) {
                 scope.$watch(attrs.ngModel, function () {
                     ngModel.$render();
                 }, true);
+                
+                // Watch numeric (byVal) for changes and update
+                scope.$watch(attrs.numeric, function (newVal) {
+                    init();
+                    if (newVal != undefined) {
+                        numericElement.spinner('option', newVal);
+                    }
+                }, true);
+                
                 attrs.$observe('disabled', function (newVal) {
                     init();
                     numericElement.spinner('option', 'disabled', !!newVal);
