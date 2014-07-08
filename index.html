@@ -66,14 +66,15 @@ angular.module('app', ['ui.numeric']);
 
 
 <pre><code>
+  &lt;div numeric="numeric_options" style="float:left" ng-model="numeric_event"&gt;&lt;/div&gt;
+  
  $scope.numeric_options = {
     start: function (event, ui) { console.log('numeric start'); },
     stop: function (event, ui) { console.log('numeric stop'); }
  }
- <div numeric="numeric_options" style="float:left" ng-model="numeric_event_demo"></div>
 </code></pre>
 <div ng-controller="ctrl">
-   &lt;div numeric="numeric_options" style="float:left" ng-model="numeric_event"&gt;&lt;/div&gt;
+  <div numeric="numeric_options" style="float:left" ng-model="numeric_event_demo"></div>
    &nbsp;&nbsp;<button ng-click="events=[]">Clear</button>
    <div style="width:100%;float: left"> 
    	 <div ng-repeat="event in events track by $index">{{event}}</div>
