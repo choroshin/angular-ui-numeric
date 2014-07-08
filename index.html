@@ -64,11 +64,11 @@ angular.module('app', ['ui.numeric']);
 </br>
 <h3><a name="default" class="anchor" href="#default"><span class="octicon octicon-link"></span></a>numeric control has event listeners attached to it, assigned by defining the listeners in the option passed to the numeric control:</h3>
 
-
+html:
 <pre><code>
   &lt;div numeric="numeric_options" ng-model="numeric_event"&gt;&lt;/div&gt;
 </code></pre>
-in controller:
+controller:
 <pre><code>
  $scope.numeric_options = {
     start: function (event, ui) { console.log('numeric start'); },
