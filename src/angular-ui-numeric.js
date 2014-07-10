@@ -71,8 +71,12 @@ angular.module('ui.numeric', []).directive("numeric", function ($timeout) {
                 }, true);
                 
                 attrs.$observe('disabled', function (newVal) {
+                    if (angular.isUndefined(newVal)) {
+                        return;
+                    }
                     init();
-                    numericElement.spinner('option', 'disabled', !!newVal);
+                    var newValState = newVal.toLowerCase() == 'true';
+                    numericElement.spinner('option', 'disabled', newValState);
                 });
                 //destroy jquery spinner object when directive object is destroyed
                 function destroy() {
