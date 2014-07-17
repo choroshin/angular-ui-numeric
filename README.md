@@ -21,5 +21,8 @@ Check the [demo](http://choroshin.github.io/angular-ui-numeric/) for an example 
 ## Playground
 http://plnkr.co/edit/o33VP56azuA22FLjpU3p?p=preview
 
+## License
+Released under the terms of MIT License.
+
 
 
