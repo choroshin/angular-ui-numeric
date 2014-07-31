@@ -68,6 +68,7 @@ angular.module('ui.numeric', []).directive("numeric", function ($timeout) {
                     if (newVal != undefined) {
                         numericElement.spinner('option', newVal);
                     }
+                     ngModel.$render();
                 }, true);
                 
                 attrs.$observe('disabled', function (newVal) {
