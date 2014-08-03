@@ -48,6 +48,13 @@ angular.module('ui.numeric', []).directive("numeric", function ($timeout) {
                         ngModel.$setViewValue(ui.value);
                     }, 0);
                 });
+                    // Update model value from spinner
+                numericElement.bind('keypress', function (event, ui) {
+                        var value=angular.element(this).val();
+                    $timeout(function () {
+                        ngModel.$setViewValue(value);
+                    }, 0);
+                });
                 // Find out if decimals are to be used for spinner
                 angular.forEach(properties, function (property) {
                 // watch for updates
