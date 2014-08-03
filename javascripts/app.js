@@ -2,10 +2,10 @@ angular.module('app', ['ui.numeric']);
 function ctrl($scope){
 $scope.events=[];
  $scope.numeric_options = {
-start: function (event, ui) { 
-	$scope.events.push('Slider start'); 
+slide: function (event, ui) { 
+	$scope.events.push('Slider slide'); 
 	},
-    change: function (event, ui) { 
+change: function (event, ui) { 
     	$scope.events.push('Slider change'); 
     	}
  }
