@@ -5,8 +5,8 @@ $scope.events=[];
 start: function (event, ui) { 
 	$scope.events.push('Slider start'); 
 	},
-    stop: function (event, ui) { 
-    	$scope.events.push('Slider stop'); 
+    change: function (event, ui) { 
+    	$scope.events.push('Slider change'); 
     	}
  }
  
