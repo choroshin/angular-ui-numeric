@@ -11,8 +11,8 @@ angular.module('ui.numeric', []).directive("numeric", function ($timeout,$compil
                     numericElement = angular.element('<input>');
                     element.append(numericElement);
                 }
-                numericElement.attr("ng-model", "numericModel");
-                $compile(numericElement)(scope);
+             //   numericElement.attr("ng-model", "numericModel");
+             //   $compile(numericElement)(scope);
                 function parseNumber(n, decimals) {
                     return (decimals) ? parseFloat(n) : parseInt(n);
                 };
@@ -51,12 +51,12 @@ angular.module('ui.numeric', []).directive("numeric", function ($timeout,$compil
                         ngModel.$setViewValue(ui.value);
                     }, 0);
                 });
-                Update model value from spinner
-                scope.$watch("numericModel", function (newVal) {
-                    if (newVal) {
-                        ngModel.$setViewValue(newVal);
-                    }    
-                }, true);
+              //  Update model value from spinner
+              //  scope.$watch("numericModel", function (newVal) {
+             //       if (newVal) {
+              //          ngModel.$setViewValue(newVal);
+             //       }    
+              //  }, true);
                 // Find out if decimals are to be used for spinner
                 angular.forEach(properties, function (property) {
                 // watch for updates
