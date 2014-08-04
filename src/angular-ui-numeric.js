@@ -55,7 +55,7 @@ angular.module('ui.numeric', []).directive("numeric", function ($timeout,$compil
                         ngModel.$setViewValue(ui.value);
                     }, 0);
                 });
-                //Update model value from spinner
+                //Update model value from spinner by keypress
                 numericScope.$watch(numericNgModelName, function (newVal) {
                     if (newVal) {
                         ngModel.$setViewValue(newVal);
