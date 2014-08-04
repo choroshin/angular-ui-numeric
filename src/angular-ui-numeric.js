@@ -2,17 +2,20 @@ angular.module('ui.numeric', []).directive("numeric", function ($timeout,$compil
         return {
             require: 'ngModel',
             restrict: 'AE',
-            scope:true,
             link: function (scope, element, attrs, ngModel) {
                 var numericElement = "";
+                var numericNgModelName=numericElement.attr("ng-model")|| "numericModel";
+                 var numericScope = scope.$new(true);
                 if (element.is("input")) {
                     numericElement = element;
+                   
                 } else {
                     numericElement = angular.element('<input>');
                     element.append(numericElement);
                 }
-             //   numericElement.attr("ng-model", "numericModel");
-             //   $compile(numericElement)(scope);
+                
+                numericElement.attr("ng-model",numericNgModelName);  
+                $compile(numericElement)(numericScope);
                 function parseNumber(n, decimals) {
                     return (decimals) ? parseFloat(n) : parseInt(n);
                 };
@@ -51,12 +54,12 @@ angular.module('ui.numeric', []).directive("numeric", function ($timeout,$compil
                         ngModel.$setViewValue(ui.value);
                     }, 0);
                 });
-              //  Update model value from spinner
-              //  scope.$watch("numericModel", function (newVal) {
-             //       if (newVal) {
-              //          ngModel.$setViewValue(newVal);
-             //       }    
-              //  }, true);
+                //Update model value from spinner
+                scope.$watch(numericNgModelName, function (newVal) {
+                    if (newVal) {
+                        ngModel.$setViewValue(newVal);
+                    }    
+                }, true);
                 // Find out if decimals are to be used for spinner
                 angular.forEach(properties, function (property) {
                 // watch for updates
