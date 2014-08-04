@@ -4,7 +4,7 @@ angular.module('ui.numeric', []).directive("numeric", function ($timeout,$compil
             restrict: 'AE',
             link: function (scope, element, attrs, ngModel) {
                 var numericElement = "";
-                var numericNgModelName=numericElement.attr("ng-model")|| "numericModel";
+                var numericNgModelName="";
                  var numericScope = scope.$new(true);
                 if (element.is("input")) {
                     numericElement = element;
@@ -13,7 +13,7 @@ angular.module('ui.numeric', []).directive("numeric", function ($timeout,$compil
                     numericElement = angular.element('<input>');
                     element.append(numericElement);
                 }
-                
+               numericNgModelName= numericElement.attr("ng-model")|| "numericModel";
                 numericElement.attr("ng-model",numericNgModelName);  
                 $compile(numericElement)(numericScope);
                 function parseNumber(n, decimals) {
