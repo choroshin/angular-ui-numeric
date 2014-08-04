@@ -5,7 +5,8 @@ angular.module('ui.numeric', []).directive("numeric", function ($timeout,$compil
             link: function (scope, element, attrs, ngModel) {
                 var numericElement = "";
                 var numericNgModelName="";
-                 var numericScope = scope.$new(true);
+                var numericScope = scope.$new(true);
+                
                 if (element.is("input")) {
                     numericElement = element;
                    
@@ -55,7 +56,7 @@ angular.module('ui.numeric', []).directive("numeric", function ($timeout,$compil
                     }, 0);
                 });
                 //Update model value from spinner
-                scope.$watch(numericNgModelName, function (newVal) {
+                numericScope.$watch(numericNgModelName, function (newVal) {
                     if (newVal) {
                         ngModel.$setViewValue(newVal);
                     }    
