@@ -52,11 +52,11 @@ angular.module('ui.numeric', []).directive("numeric", function ($timeout,$compil
                     }, 0);
                 });
                // Update model value from spinner
-                scope.$watch("numericModel", function (newVal) {
-                    if (newVal) {
-                        ngModel.$setViewValue(newVal);
-                    }    
-                }, true);
+             //   scope.$watch("numericModel", function (newVal) {
+             //       if (newVal) {
+             //           ngModel.$setViewValue(newVal);
+             //       }    
+              //  }, true);
                 // Find out if decimals are to be used for spinner
                 angular.forEach(properties, function (property) {
                 // watch for updates
