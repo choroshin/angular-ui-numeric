@@ -15,7 +15,7 @@ angular.module('ui.numeric', []).directive("numeric", function ($timeout,$compil
                 }
                var  numericNgModelName = attrs.ngModel || "numericModel";
                numericElement.attr("ng-model", numericNgModelName);
-                $compile(numericElement)(numericScope);
+                $compile(numericElement)(scope);
                 function parseNumber(n, decimals) {
                     return (decimals) ? parseFloat(n) : parseInt(n);
                 };
