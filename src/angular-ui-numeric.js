@@ -5,8 +5,7 @@ angular.module('ui.numeric', []).directive("numeric", function ($timeout,$compil
             link: function (scope, element, attrs, ngModel) {
                 var numericElement = "";
                 var numericNgModelName="";
-                var numericScope = scope.$new(true);
-                
+            
                 if (element.is("input")) {
                     numericElement = element;
                    
@@ -14,8 +13,8 @@ angular.module('ui.numeric', []).directive("numeric", function ($timeout,$compil
                     numericElement = angular.element('<input>');
                     element.append(numericElement);
                 }
-               numericNgModelName= numericElement.attr("ng-model")|| "numericModel";
-                numericElement.attr("ng-model",numericNgModelName);  
+               var  numericNgModelName = attrs.ngModel || "numericModel";
+               numericElement.attr("ng-model", numericNgModelName);
                 $compile(numericElement)(numericScope);
                 function parseNumber(n, decimals) {
                     return (decimals) ? parseFloat(n) : parseInt(n);
@@ -55,12 +54,7 @@ angular.module('ui.numeric', []).directive("numeric", function ($timeout,$compil
                         ngModel.$setViewValue(ui.value);
                     }, 0);
                 });
-                //Update model value from spinner by keypress
-                numericScope.$watch(numericNgModelName, function (newVal) {
-                    if (newVal) {
-                        ngModel.$setViewValue(newVal);
-                    }    
-                }, true);
+           
                 // Find out if decimals are to be used for spinner
                 angular.forEach(properties, function (property) {
                 // watch for updates
