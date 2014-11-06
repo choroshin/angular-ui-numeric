@@ -46,7 +46,9 @@ angular.module('ui.numeric', []).directive("numeric", function ($timeout,$compil
                     if (isNaN(ngModel.$viewValue) && !(ngModel.$viewValue instanceof Array)) {
                         ngModel.$viewValue = 0;
                     }
-                    numericElement.spinner("value", ngModel.$viewValue);
+                   scope.$evalAsync(function () {
+                        numericElement.spinner("value", ngModel.$viewValue);
+                    });
                 }
                 // Update model value from spinner
                 numericElement.bind('spin', function (event, ui) {
