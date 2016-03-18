@@ -23,7 +23,7 @@ angular.module('ui.numeric', []).directive("numeric", function ($timeout,$compil
                 var properties = ['min', 'max', 'step'];
                 var options = scope.$eval(attrs.numeric) || {};
                 var numberFormat = (attrs.numberFormat || options.numberFormat);
-                var useDecimals = numberFormat ? (numberFormat.toLowerCase() === "c" ? true : false) : false;
+                var useDecimals = numberFormat && numberFormat.toLowerCase() === "c";
 
                 var init = function () {
                     angular.forEach(properties, function (property) {
